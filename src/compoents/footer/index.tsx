@@ -13,10 +13,6 @@ const Footer = () => {
     <Box bg='#1D63AF' color='white' py={10}>
       <Container maxW='6xl'>
         <Stack gap={6} textAlign='center'>
-          <Heading as='h2' size='md'>
-            Media Spectrum Sales
-          </Heading>
-          <Separator borderColor='whiteAlpha.300' />
           <Text fontSize='sm'>
             &copy; {new Date().getFullYear()} Media Spectrum Sales. All rights
             reserved.

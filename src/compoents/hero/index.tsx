@@ -9,7 +9,7 @@ import {
   Stack,
   HStack,
 } from '@chakra-ui/react';
-import { FiTarget, FiBarChart2, FiTrendingUp } from 'react-icons/fi';
+// import { FiTarget, FiBarChart2, FiTrendingUp } from 'react-icons/fi';
 
 interface Feature {
   title: string;
@@ -17,9 +17,9 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  { title: 'Media Planning', Icon: FiTarget },
-  { title: 'Programmatic Buying', Icon: FiBarChart2 },
-  { title: 'Performance Analytics', Icon: FiTrendingUp },
+  // { title: 'Media Planning', Icon: FiTarget },
+  // { title: 'Programmatic Buying', Icon: FiBarChart2 },
+  // { title: 'Performance Analytics', Icon: FiTrendingUp },
 ];
 
 const Hero: FC = () => (
@@ -32,18 +32,13 @@ const Hero: FC = () => (
   >
     <Container
       maxW='5xl'
+      bgImage={'/common/imgs/diversity.png'}
       position='relative'
       zIndex={1}
       textAlign='center'
       color='blackAlpha.800'
     >
       <Flex justify='center' align='center' mb={6}>
-        {/* <Image
-          src='/logo.png'
-          alt='Media Spectrum Sales Logo'
-          boxSize={{ base: '50px', md: '70px' }}
-          mr={4}
-        /> */}
         <Heading
           as='h1'
           fontSize={{ base: '3xl', md: '5xl' }}
@@ -87,18 +82,19 @@ const Hero: FC = () => (
       </Stack>
       {/* Feature Highlights */}
       <HStack gap={{ base: 8, md: 16 }} justify='center'>
-        {features.map(({ title, Icon }) => (
-          <HStack key={title} gap={3} align='center'>
-            <Box as={Icon} boxSize={6} />
-            <Text
-              fontSize='lg'
-              fontWeight='semibold'
-              fontFamily='Open Sans, sans-serif'
-            >
-              {title}
-            </Text>
-          </HStack>
-        ))}
+        {features &&
+          features.map(({ title, Icon }) => (
+            <HStack key={title} gap={3} align='center'>
+              <Box as={Icon} boxSize={6} />
+              <Text
+                fontSize='lg'
+                fontWeight='semibold'
+                fontFamily='Open Sans, sans-serif'
+              >
+                {title}
+              </Text>
+            </HStack>
+          ))}
       </HStack>
     </Container>
   </Box>

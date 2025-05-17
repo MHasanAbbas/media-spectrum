@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
+import TopNavigation from './top';
 
 const Navigation: FC = () => {
-  return <></>;
+  return (
+    <>
+      <TopNavigation />
+    </>
+  );
 };
 
 export default Navigation;
