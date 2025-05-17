@@ -1,25 +1,28 @@
-import React from 'react';
-import {
-  Box,
-  Heading,
-  Text,
-  Stack,
-  Container,
-  Separator,
-} from '@chakra-ui/react';
+// Footer.tsx
+'use client';
 
-const Footer = () => {
-  return (
-    <Box bg='#1D63AF' color='white' py={10}>
-      <Container maxW='6xl'>
-        <Stack gap={6} textAlign='center'>
-          <Text fontSize='sm'>
-            &copy; {new Date().getFullYear()} Media Spectrum Sales. All rights
-            reserved.
-          </Text>
-        </Stack>
-      </Container>
-    </Box>
-  );
-};
+import React from 'react';
+import { Box, Text, Container } from '@chakra-ui/react';
+
+const Footer: React.FC = () => (
+  <Box
+    as='footer'
+    bg='#1D63AF'
+    color='white'
+    py={3}
+    position='fixed'
+    bottom={0}
+    left={0}
+    w='100%'
+    zIndex={1}
+  >
+    <Container maxW='6xl' textAlign='center'>
+      <Text fontSize='sm'>
+        &copy; {new Date().getFullYear()} Media Spectrum Sales. All rights
+        reserved.
+      </Text>
+    </Container>
+  </Box>
+);
+
 export default Footer;

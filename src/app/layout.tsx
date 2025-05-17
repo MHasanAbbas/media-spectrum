@@ -3,6 +3,8 @@
 import type { Metadata, Viewport } from 'next';
 import { SiteMetaData } from '@/config/meta';
 import ChakraUIProvider from '@/provider/';
+import Navigation from '@/compoents/navigation';
+import Footer from '@/compoents/footer';
 
 export const metadata: Metadata = {
   title: {
@@ -37,9 +39,9 @@ export default function RootLayout({
       </head>
       <body style={{ backgroundColor: '#fff' }}>
         <ChakraUIProvider>
-          {/* <Navigation /> */}
+          <Navigation />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </ChakraUIProvider>
       </body>
     </html>
