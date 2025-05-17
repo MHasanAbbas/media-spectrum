@@ -47,22 +47,6 @@ const TopNavigation: React.FC<any> = () => {
           >
             <Box
               my={3}
-              mr={'1em'}
-              cursor='pointer'
-              color='black'
-              onClick={() => {
-                router.push('/how-it-works');
-              }}
-              _hover={{
-                color: '#3E7B27',
-              }}
-            >
-              <Text fontWeight='semibold' textStyle='md'>
-                What We Offer
-              </Text>
-            </Box>
-            <Box
-              my={3}
               mr={{ base: 0, md: '10em' }}
               cursor='pointer'
               color='black'
@@ -70,36 +54,13 @@ const TopNavigation: React.FC<any> = () => {
                 router.push('/contact-us');
               }}
               _hover={{
-                color: '#3E7B27',
+                color: 'orange.600',
               }}
             >
               <Text fontWeight='semibold' textStyle='md'>
-                Contact Us
+                Contact
               </Text>
             </Box>
-            {/* <Button
-              display={{ base: 'none', md: 'block' }}
-              size='lg'
-              px={5}
-              mr={{ base: 0, md: '10em' }}
-              fontWeight='semibold'
-              variant='outline'
-              color='green.700'
-              borderColor='green.700'
-              _hover={{
-                bg: '#3E7B27',
-                color: 'white',
-              }}
-              onClick={() => {
-                window.open(
-                  'https://app.totaleehalalfinance.co.uk/login',
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            >
-              Sign In
-            </Button> */}
           </Stack>
         </Box>
         <Box
