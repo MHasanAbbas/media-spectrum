@@ -2,7 +2,6 @@
 
 import { Box, Stack, Flex, Image, Button } from '@chakra-ui/react';
 
-import { FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import NavigationBurger from './mobile-nav';
 

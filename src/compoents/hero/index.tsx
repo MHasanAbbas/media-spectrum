@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 import { Box, Container, Flex, Heading, Text, HStack } from '@chakra-ui/react';
-import SteppedBars from '../stepbar';
-// import { FiTarget, FiBarChart2, FiTrendingUp } from 'react-icons/fi';
 
 interface Feature {
   title: string;
