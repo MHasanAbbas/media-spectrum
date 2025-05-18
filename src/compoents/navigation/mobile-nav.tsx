@@ -16,14 +16,26 @@ import { MdOutlineClose } from 'react-icons/md';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 import { FaXTwitter } from 'react-icons/fa6';
+import { i } from 'framer-motion/client';
 interface NavItem {
   label: string;
   href: string;
+  borderTop?: boolean;
+  borderBottom?: boolean;
+  borderLeft?: boolean;
+  borderRight?: boolean;
 }
 
 const navItems: NavItem[] = [
-  { label: 'Our Spectrum', href: '/' },
-  { label: 'About Us', href: '/about' },
+  {
+    label: 'Our Spectrum',
+    href: '/',
+    borderTop: true,
+    borderBottom: true,
+    borderLeft: true,
+    borderRight: true,
+  },
+  { label: 'About Us', href: '/about', borderTop: true },
   { label: 'Solutions', href: '/approach' },
   { label: 'News', href: '/news' },
 ];
@@ -61,14 +73,15 @@ const NavigationBurger: React.FC = () => {
               <HStack
                 justifyContent='space-between'
                 alignItems='center'
-                paddingX={{ base: 2, md: 40 }}
-                my={{ base: '1em', md: '2em' }}
+                paddingX={{ base: 5, md: 40 }}
+                mt={{ base: '1em', md: '2em' }}
+                mb={{ base: '2em', md: '2em' }}
               >
                 <Image
                   src='/common/imgs/logo-orange.png'
                   alt='Media Spectrum Sales Logo'
                   style={{
-                    width: '80px',
+                    width: '60px',
                     cursor: 'pointer',
                   }}
                   onClick={() => router.push('/')}
@@ -92,13 +105,10 @@ const NavigationBurger: React.FC = () => {
                       base: 5,
                       md: index % 2 === 1 ? 20 : 40,
                     }}
+                    borderY='solid'
+                    borderRight={{ base: 'none', md: 'solid' }}
+                    borderYWidth='0.5px'
                     paddingY={{ base: 10, md: 20 }}
-                    borderTop='solid'
-                    borderBottom='solid'
-                    borderLeft={{
-                      base: 'none',
-                      md: index % 2 === 1 ? 'solid' : 'none',
-                    }}
                     _hover={{ bgColor: 'primaryHover', cursor: 'pointer' }}
                     onClick={() => handleNavigate(item.href)}
                   >
@@ -112,7 +122,7 @@ const NavigationBurger: React.FC = () => {
                 mt='0.5em'
                 fontSize='5xl'
                 px={{ base: 5, md: 40 }}
-                gap={10}
+                gap={5}
                 columns={{ base: 1, md: 2 }}
               >
                 <VStack alignItems='start'>
@@ -124,7 +134,7 @@ const NavigationBurger: React.FC = () => {
                 </VStack>
                 <Box spaceY={5} px={{ base: 0, md: 20 }}>
                   <Heading size='lg'>Follow us</Heading>
-                  <HStack gapX={10}>
+                  <HStack gapX={5}>
                     <FaFacebook cursor='pointer' size={28} />
                     <FaInstagram cursor='pointer' size={28} />
                     <FaXTwitter cursor='pointer' size={28} />

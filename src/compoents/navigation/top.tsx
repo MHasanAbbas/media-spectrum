@@ -11,15 +11,13 @@ const TopNavigation = () => {
     <Box
       bg='white'
       position='sticky'
-      top={0}
-      py={5}
+      top={4}
       alignSelf='flex-start'
       zIndex={5}
       // shadow='sm'
     >
-      <Flex justify={{ base: 'space-between' }}>
+      <Flex px={{ base: 3, md: 1 }} justify={{ base: 'space-between' }}>
         <Box
-          my={1}
           width={{ base: 'fit-content' }}
           mx={{ base: 0, md: '10em' }}
           cursor='pointer'
