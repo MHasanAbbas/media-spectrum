@@ -1,11 +1,12 @@
 'use client';
 
-import { Box, Stack, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Stack, Flex, Image, Button } from '@chakra-ui/react';
 
 import { FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import NavigationBurger from './mobile-nav';
 
-const TopNavigation: React.FC<any> = () => {
+const TopNavigation = () => {
   const router = useRouter();
   return (
     <Box
@@ -27,15 +28,15 @@ const TopNavigation: React.FC<any> = () => {
           mx={{ base: 0, md: '10em' }}
           cursor='pointer'
         >
-          <Box
-            as='img'
+          <Image
             src='/common/imgs/alt-logo.png'
             alt='Media Spectrum Sales Logo'
-            width={{ base: '100px', md: '220px' }}
-            // height={{ base: '30px', md: '100px' }}
-            p={'0.27em'}
+            style={{
+              width: '180px',
+
+              cursor: 'pointer',
+            }}
             onClick={() => router.push('/')}
-            px={'0.27em'}
           />
         </Box>
         <Box display={{ base: 'none', md: 'block' }}>
@@ -47,19 +48,35 @@ const TopNavigation: React.FC<any> = () => {
           >
             <Box
               my={3}
+              mr={{ base: 0, md: '1em' }}
+              cursor='pointer'
+              color='black'
+            >
+              <Button
+                onClick={() => {
+                  router.push('/contact-us');
+                }}
+                size='sm'
+                bgColor='primary'
+                _hover={{
+                  bgColor: 'secondary',
+                }}
+                color='white'
+                borderRadius={'4xl'}
+              >
+                Contact us
+              </Button>
+            </Box>
+            <Box
+              my={4}
               mr={{ base: 0, md: '10em' }}
               cursor='pointer'
               color='black'
-              onClick={() => {
-                router.push('/contact-us');
-              }}
               _hover={{
-                color: 'orange.600',
+                color: 'secondary',
               }}
             >
-              <Text fontWeight='semibold' textStyle='md'>
-                Contact
-              </Text>
+              <NavigationBurger />
             </Box>
           </Stack>
         </Box>
