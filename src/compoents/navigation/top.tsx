@@ -14,10 +14,10 @@ const TopNavigation = () => {
       top={0}
       alignSelf='flex-start'
       zIndex={5}
-      // shadow='sm'
+      shadow='sm'
     >
       <Flex
-        mt={{ base: '1em', md: '2em' }}
+        py={{ base: '1em', md: '0.5em' }}
         px={{ base: 3, md: 1 }}
         justify={{ base: 'space-between' }}
       >

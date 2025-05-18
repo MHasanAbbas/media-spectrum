@@ -13,7 +13,7 @@ const AboutUsPage: FC = () => {
   return (
     <>
       <Box bg='secondary'>
-        <Container mt={5} maxW='7xl' py={10}>
+        <Container maxW='7xl' py={10}>
           <Heading
             px={{ base: 4, md: '0' }}
             size={{ base: '3xl', md: '7xl' }}
