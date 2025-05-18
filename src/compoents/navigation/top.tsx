@@ -19,9 +19,6 @@ const TopNavigation = () => {
       // shadow='sm'
     >
       <Flex justify={{ base: 'space-between' }}>
-        <Box display={{ base: 'block', md: 'none' }} w='full'>
-          {/* <MobileNav /> */}
-        </Box>
         <Box
           my={1}
           width={{ base: 'fit-content' }}
@@ -39,7 +36,7 @@ const TopNavigation = () => {
             onClick={() => router.push('/')}
           />
         </Box>
-        <Box display={{ base: 'none', md: 'block' }}>
+        <Box>
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
@@ -48,11 +45,12 @@ const TopNavigation = () => {
           >
             <Box
               my={3}
-              mr={{ base: 0, md: '1em' }}
+              mr={{ base: 4, md: '1em' }}
               cursor='pointer'
               color='black'
             >
               <Button
+                display={{ base: 'none', md: 'block' }}
                 onClick={() => {
                   router.push('/contact-us');
                 }}
@@ -68,8 +66,8 @@ const TopNavigation = () => {
               </Button>
             </Box>
             <Box
-              my={4}
-              mr={{ base: 0, md: '10em' }}
+              my={{ base: 2, md: 4 }}
+              mr={{ base: '1em', md: '10em' }}
               cursor='pointer'
               color='black'
               _hover={{
