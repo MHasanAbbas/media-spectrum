@@ -1,14 +1,6 @@
 import React, { FC } from 'react';
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Text,
-  Button,
-  Stack,
-  HStack,
-} from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, HStack } from '@chakra-ui/react';
+import SteppedBars from '../stepbar';
 // import { FiTarget, FiBarChart2, FiTrendingUp } from 'react-icons/fi';
 
 interface Feature {
@@ -31,14 +23,14 @@ const Hero: FC = () => (
     overflow='hidden'
   >
     <Container
-      maxW='5xl'
+      maxW='7xl'
       bgImage={'/common/imgs/diversity.png'}
       position='relative'
       zIndex={1}
-      textAlign='center'
+      textAlign='left'
       color='blackAlpha.800'
     >
-      <Flex justify='center' align='center' mb={6}>
+      <Flex align='left' mb={6}>
         <Heading
           as='h1'
           fontSize={{ base: '3xl', md: '5xl' }}
@@ -46,9 +38,9 @@ const Hero: FC = () => (
           fontWeight='extrabold'
           letterSpacing='tight'
         >
-          Amplify Your Reach
+          Navigating the Future
           <Text as='span' display='block' mt={7}>
-            Across Every Channel
+            of Multicultural Communication
           </Text>
         </Heading>
       </Flex>
@@ -58,14 +50,17 @@ const Hero: FC = () => (
         fontFamily='Open Sans, sans-serif'
         mb={10}
         color='blackAlpha.800'
-        maxW='3xl'
         mx='auto'
       >
-        At Media Spectrum Sales, we craft data-driven ad strategies that connect
-        brands to audiences — from digital to broadcast and beyond.
+        At SMS, we understand that reaching diverse audiences in today&#39;s
+        multicultural landscape can be complex and challenging. That&#39;s why
+        we&#39;re here-to simplify the process and provide a breath of fresh air
+        in media sales. With our extensive expertise in media planning and
+        buying, we specialise in connecting brands with the diverse communities
+        they seek to engage.
       </Text>
 
-      <Stack
+      {/* <Stack
         direction={{ base: 'column', md: 'row' }}
         gap={6}
         justify='center'
@@ -79,7 +74,7 @@ const Hero: FC = () => (
         >
           Get Started
         </Button>
-      </Stack>
+      </Stack> */}
       {/* Feature Highlights */}
       <HStack gap={{ base: 8, md: 16 }} justify='center'>
         {features &&

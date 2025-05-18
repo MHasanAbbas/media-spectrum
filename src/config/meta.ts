@@ -1,5 +1,5 @@
 export const SiteMetaData = {
-  name: 'Spectrum Media Sales',
+  name: 'Spectrum Media - Your Premier Media Sales Agency',
   description: '',
   keywords: [],
 };
