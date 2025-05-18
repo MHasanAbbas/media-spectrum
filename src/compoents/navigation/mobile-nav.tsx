@@ -16,7 +16,7 @@ import { MdOutlineClose } from 'react-icons/md';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 import { FaXTwitter } from 'react-icons/fa6';
-import { i } from 'framer-motion/client';
+
 interface NavItem {
   label: string;
   href: string;
