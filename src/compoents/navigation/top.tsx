@@ -80,20 +80,6 @@ const TopNavigation = () => {
             </Box>
           </Stack>
         </Box>
-        <Box
-          pr={3}
-          w='full'
-          display={{ base: 'flex', md: 'none' }}
-          justifyContent='flex-end'
-        >
-          <FaPhone
-            size={25}
-            style={{
-              marginTop: '0.4em',
-              color: '#3E7B27',
-            }}
-          />
-        </Box>
       </Flex>
     </Box>
   );
