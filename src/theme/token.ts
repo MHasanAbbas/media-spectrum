@@ -2,9 +2,16 @@ import { defineTokens } from '@chakra-ui/react';
 
 export const tokens = defineTokens({
   colors: {
-    primary: { value: '#E34234' },
-    secondary: { value: '#126c36' },
-    accent: { value: '#FBBF24' },
-    // background: { value: '#F7FAFC' }, // Light background color
+    // base colours
+    primary: { value: '#E34234' }, // Vermilion
+    secondary: { value: '#126c36' }, // Deep green
+    accent: { value: '#1D63AF' }, // Royal blue
+    // optional surface
+    // background:  { value: '#F7FAFC' },
+
+    /* hover / focus-visible variants (≈ +15 % lightness) */
+    primaryHover: { value: '#E75E52' }, // lighter vermilion
+    secondaryHover: { value: '#1A9D4E' }, // lighter green
+    accentHover: { value: '#2379D6' }, // lighter blue
   },
 });

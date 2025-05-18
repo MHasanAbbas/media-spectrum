@@ -1,5 +1,6 @@
+// NavigationBurger.tsx (improved with original imports retained)
 import {
-  CloseButton,
+  Image,
   Drawer,
   Heading,
   HStack,
@@ -9,48 +10,130 @@ import {
 } from '@chakra-ui/react';
 import { TbMenu } from 'react-icons/tb';
 import { SimpleGrid, Box } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { MdOutlineClose } from 'react-icons/md';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
-const NavigationBurger: React.FC<unknown> = () => {
+import { FaXTwitter } from 'react-icons/fa6';
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: 'Our Spectrum', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Spectrum', href: '/approach' },
+  { label: 'News', href: '/news' },
+];
+
+const NavigationBurger: React.FC = () => {
+  const router = useRouter();
+  const [isOpen, setOpen] = useState(false);
   const placement = 'top';
+
+  const toggleDrawer = () => setOpen((prev) => !prev);
+  const closeDrawer = () => setOpen(false);
+  const handleNavigate = (href: string) => {
+    closeDrawer();
+    router.push(href);
+  };
+
   return (
     <HStack wrap='wrap'>
-      <Drawer.Root key={placement} placement={placement} size='full'>
+      <Drawer.Root
+        open={isOpen}
+        onOpenChange={(e) => setOpen(e.open)}
+        key={placement}
+        placement={placement}
+        size='full'
+      >
+        {/* Burger icon */}
         <Drawer.Trigger asChild>
-          <TbMenu size={28} />
+          <TbMenu size={28} onClick={toggleDrawer} />
         </Drawer.Trigger>
+
         <Portal>
           <Drawer.Backdrop />
           <Drawer.Positioner>
-            <Drawer.Content backgroundColor='primary'>
-              <SimpleGrid mt='4em' color='white' fontSize='5xl' columns={2}>
-                <Box padding={20} borderY='solid'>
-                  Our Spectrum
-                </Box>
-                <Box padding={20} borderLeft='solid' borderY='solid'>
-                  About Us
-                </Box>
-                <Box padding={20} borderBottom='solid'>
-                  Spectrum Approach
-                </Box>
-                <Box padding={20} borderLeft='solid' borderBottom='solid'>
-                  News
-                </Box>
-              </SimpleGrid>
-              <SimpleGrid mt='1em' color='white' fontSize='5xl' columns={2}>
-                <Box>
-                  <VStack paddingX={20} alignItems='start'>
-                    <Heading>Our Office</Heading>
-                    <Heading>London</Heading>
-                    <Text fontSize='lg'>Covent Street, Kensington ABC DEF</Text>
-                  </VStack>
-                </Box>
-                {/* <Box>About Us</Box> */}
+            <Drawer.Content backgroundColor='primary' color='white'>
+              <HStack
+                justifyContent='space-between'
+                alignItems='center'
+                paddingX={{ base: 5, md: 40 }}
+                my={{ base: '3em', md: '2em' }}
+              >
+                <Image
+                  src='/common/imgs/alt-logo.png'
+                  alt='Media Spectrum Sales Logo'
+                  style={{
+                    width: '180px',
+
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => router.push('/')}
+                />
+
+                <MdOutlineClose
+                  cursor='pointer'
+                  size={28}
+                  onClick={toggleDrawer}
+                />
+              </HStack>
+              {/* Main navigation grid */}
+              <SimpleGrid
+                fontSize={{ base: '3xl', md: '5xl' }}
+                columns={{ base: 1, md: 2 }}
+              >
+                {navItems.map((item, index) => (
+                  <Box
+                    key={item.label}
+                    paddingX={{
+                      base: 5,
+                      md: index % 2 === 1 ? 20 : 40,
+                    }}
+                    paddingY={{ base: 10, md: 20 }}
+                    borderTop='solid'
+                    borderBottom='solid'
+                    borderLeft={{
+                      base: 'none',
+                      md: index % 2 === 1 ? 'solid' : 'none',
+                    }}
+                    _hover={{ bgColor: 'primaryHover', cursor: 'pointer' }}
+                    onClick={() => handleNavigate(item.href)}
+                  >
+                    <Text fontWeight='medium'>{item.label}</Text>
+                  </Box>
+                ))}
               </SimpleGrid>
 
-              <Drawer.Footer></Drawer.Footer>
-              <Drawer.CloseTrigger asChild>
-                <CloseButton size='sm' />
-              </Drawer.CloseTrigger>
+              {/* Office blurb */}
+              <SimpleGrid
+                mt='0.5em'
+                fontSize='5xl'
+                px={{ base: 5, md: 40 }}
+                gap={10}
+                columns={{ base: 1, md: 2 }}
+              >
+                <VStack alignItems='start'>
+                  <Heading size='lg'>Our Office</Heading>
+                  <Heading size='lg' fontWeight='medium'>
+                    London
+                  </Heading>
+                  <Text fontSize='lg'>Covent Street, Kensington ABC DEF</Text>
+                </VStack>
+                <Box spaceY={5} px={{ base: 0, md: 20 }}>
+                  <Heading size='lg'>Follow us</Heading>
+                  <HStack gapX={10}>
+                    <FaFacebook cursor='pointer' size={28} />
+                    <FaInstagram cursor='pointer' size={28} />
+                    <FaXTwitter cursor='pointer' size={28} />
+                  </HStack>
+                </Box>
+              </SimpleGrid>
+
+              <Drawer.Footer />
             </Drawer.Content>
           </Drawer.Positioner>
         </Portal>
