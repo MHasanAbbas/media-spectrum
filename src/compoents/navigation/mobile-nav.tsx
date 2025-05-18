@@ -7,6 +7,7 @@ import {
   Portal,
   Text,
   VStack,
+  Button,
 } from '@chakra-ui/react';
 import { TbMenu } from 'react-icons/tb';
 import { SimpleGrid, Box } from '@chakra-ui/react';
@@ -86,12 +87,45 @@ const NavigationBurger: React.FC = () => {
                   }}
                   onClick={() => router.push('/')}
                 />
-
-                <MdOutlineClose
-                  cursor='pointer'
-                  size={28}
-                  onClick={toggleDrawer}
-                />
+                <Box display={'flex'}>
+                  <Box
+                    mr={{ base: 4, md: '1em' }}
+                    cursor='pointer'
+                    color='black'
+                  >
+                    <Button
+                      onClick={() => {
+                        setOpen(false);
+                        router.push('/contact-us');
+                      }}
+                      size='sm'
+                      bgColor='secondary'
+                      _hover={{
+                        bgColor: 'white',
+                        color: 'primary',
+                      }}
+                      color='white'
+                      borderRadius={'4xl'}
+                    >
+                      Contact us
+                    </Button>
+                  </Box>
+                  <Box
+                    _hover={{
+                      bg: 'white',
+                      color: 'primary',
+                      borderRadius: 'full',
+                      paddingX: '0.5em',
+                    }}
+                  >
+                    <MdOutlineClose
+                      style={{ marginTop: '0.3em' }}
+                      cursor='pointer'
+                      size={28}
+                      onClick={toggleDrawer}
+                    />
+                  </Box>
+                </Box>
               </HStack>
               {/* Main navigation grid */}
               <SimpleGrid

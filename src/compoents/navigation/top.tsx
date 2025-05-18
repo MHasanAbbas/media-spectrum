@@ -16,7 +16,11 @@ const TopNavigation = () => {
       zIndex={5}
       // shadow='sm'
     >
-      <Flex px={{ base: 3, md: 1 }} justify={{ base: 'space-between' }}>
+      <Flex
+        mt={{ base: '1em', md: '2em' }}
+        px={{ base: 3, md: 1 }}
+        justify={{ base: 'space-between' }}
+      >
         <Box
           width={{ base: 'fit-content' }}
           mx={{ base: 0, md: '10em' }}
