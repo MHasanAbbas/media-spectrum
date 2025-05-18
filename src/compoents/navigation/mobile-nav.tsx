@@ -61,15 +61,14 @@ const NavigationBurger: React.FC = () => {
               <HStack
                 justifyContent='space-between'
                 alignItems='center'
-                paddingX={{ base: 5, md: 40 }}
-                my={{ base: '3em', md: '2em' }}
+                paddingX={{ base: 2, md: 40 }}
+                my={{ base: '1em', md: '2em' }}
               >
                 <Image
-                  src='/common/imgs/alt-logo.png'
+                  src='/common/imgs/logo-orange.png'
                   alt='Media Spectrum Sales Logo'
                   style={{
-                    width: '180px',
-
+                    width: '80px',
                     cursor: 'pointer',
                   }}
                   onClick={() => router.push('/')}
