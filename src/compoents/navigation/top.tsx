@@ -11,7 +11,7 @@ const TopNavigation = () => {
     <Box
       bg='white'
       position='sticky'
-      top={4}
+      top={0}
       alignSelf='flex-start'
       zIndex={5}
       // shadow='sm'
@@ -21,13 +21,13 @@ const TopNavigation = () => {
           width={{ base: 'fit-content' }}
           mx={{ base: 0, md: '10em' }}
           cursor='pointer'
+          my={3}
         >
           <Image
             src='/common/imgs/alt-logo.png'
             alt='Media Spectrum Sales Logo'
             style={{
               width: '180px',
-
               cursor: 'pointer',
             }}
             onClick={() => router.push('/')}
@@ -63,7 +63,7 @@ const TopNavigation = () => {
               </Button>
             </Box>
             <Box
-              my={{ base: 2, md: 4 }}
+              my={{ base: 4, md: 4 }}
               mr={{ base: '1em', md: '10em' }}
               cursor='pointer'
               color='black'
