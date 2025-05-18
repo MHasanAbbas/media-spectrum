@@ -96,36 +96,37 @@ const ContactUsPage: FC = () => {
   return (
     <>
       <Box w='full' bg='secondary'>
-        <Container mt={5} maxW='7xl'>
-          <Text fontSize='4xl' fontWeight='bold' color='white' p={5}>
-            Contact Us
-          </Text>
-        </Container>
-      </Box>
-      <Container maxW='7xl'>
-        <SimpleGrid columns={{ base: 1, md: 2 }} px={5} gap={10}>
-          <VStack alignItems='flex-start' my={{ base: 5, md: 10 }}>
-            <Center>
-              <Heading size='5xl' color='primary' fontWeight='normal'>
-                Let&#39;s create something extraordinary together.
-              </Heading>
-            </Center>
-            <GridItem colSpan={{ base: 1, md: 2 }} borderY='solid' py={10}>
-              <Text fontSize='3xl' fontWeight='normal' color='black'>
-                General Enquiries
-              </Text>
-              <Text fontSize='2xl' fontWeight='normal' color='black' mt={3}>
-                Have a general query? We&#39;ll always do our best to help:
-                hello@spectrummedia.co.uk
-              </Text>
-            </GridItem>
-          </VStack>
-          <GridItem borderRadius='md' my={{ base: 5, md: 10 }}>
-            <Text fontWeight='medium' color='black'>
+        <Container mt={5} maxW='7xl' py={10}>
+          <Heading size={{ base: '3xl', md: '6xl' }} color='white'>
+            Let&#39;s create something extraordinary together.
+          </Heading>
+          <Box>
+            <Heading
+              textAlign='left'
+              size={{ base: 'xl', md: '2xl' }}
+              mt={2}
+              color='white'
+              fontWeight='semibold'
+            >
               Get in touch with us today to learn more about our services and
               how we can help you achieve your goals.
+            </Heading>
+          </Box>
+        </Container>
+      </Box>
+
+      <Container maxW='7xl'>
+        <SimpleGrid columns={{ base: 1, md: 2 }} px={5} gap={10}>
+          <GridItem py={10}>
+            <Text fontSize='3xl' fontWeight='normal' color='black'>
+              General Enquiries
             </Text>
-            <Separator my={5} />
+            <Text fontSize='2xl' fontWeight='normal' color='black' mt={3}>
+              Have a general query? We&#39;ll always do our best to help:
+              hello@spectrummedia.co.uk
+            </Text>
+          </GridItem>
+          <GridItem borderRadius='md' my={{ base: 5, md: 10 }}>
             <TabsForm />
           </GridItem>
         </SimpleGrid>
