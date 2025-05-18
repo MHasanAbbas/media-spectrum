@@ -1,5 +1,14 @@
-import { CloseButton, Drawer, HStack, Portal } from '@chakra-ui/react';
+import {
+  CloseButton,
+  Drawer,
+  Heading,
+  HStack,
+  Portal,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import { TbMenu } from 'react-icons/tb';
+import { SimpleGrid, Box } from '@chakra-ui/react';
 
 const NavigationBurger: React.FC<unknown> = () => {
   const placement = 'top';
@@ -12,17 +21,32 @@ const NavigationBurger: React.FC<unknown> = () => {
         <Portal>
           <Drawer.Backdrop />
           <Drawer.Positioner>
-            <Drawer.Content
-              roundedTop={undefined}
-              roundedBottom={placement === 'top' ? 'l3' : undefined}
-            >
-              <Drawer.Header>
-                <Drawer.Title>Drawer Title</Drawer.Title>
-              </Drawer.Header>
-              <Drawer.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Drawer.Body>
+            <Drawer.Content backgroundColor='primary'>
+              <SimpleGrid mt='4em' color='white' fontSize='5xl' columns={2}>
+                <Box padding={20} borderY='solid'>
+                  Our Spectrum
+                </Box>
+                <Box padding={20} borderLeft='solid' borderY='solid'>
+                  About Us
+                </Box>
+                <Box padding={20} borderBottom='solid'>
+                  Spectrum Approach
+                </Box>
+                <Box padding={20} borderLeft='solid' borderBottom='solid'>
+                  News
+                </Box>
+              </SimpleGrid>
+              <SimpleGrid mt='1em' color='white' fontSize='5xl' columns={2}>
+                <Box>
+                  <VStack paddingX={20} alignItems='start'>
+                    <Heading>Our Office</Heading>
+                    <Heading>London</Heading>
+                    <Text fontSize='lg'>Covent Street, Kensington ABC DEF</Text>
+                  </VStack>
+                </Box>
+                {/* <Box>About Us</Box> */}
+              </SimpleGrid>
+
               <Drawer.Footer></Drawer.Footer>
               <Drawer.CloseTrigger asChild>
                 <CloseButton size='sm' />
