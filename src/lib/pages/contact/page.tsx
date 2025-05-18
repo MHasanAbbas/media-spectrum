@@ -7,13 +7,10 @@ import {
   Text,
   Textarea,
   SimpleGrid,
-  VStack,
   Box,
   Heading,
-  Center,
   Tabs,
   GridItem,
-  Separator,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
@@ -95,16 +92,21 @@ const TabsForm = () => {
 const ContactUsPage: FC = () => {
   return (
     <>
-      <Box w='full' bg='secondary'>
+      <Box bg='secondary'>
         <Container mt={5} maxW='7xl' py={10}>
-          <Heading size={{ base: '3xl', md: '6xl' }} color='white'>
+          <Heading
+            px={{ base: 4, md: '0' }}
+            size={{ base: '3xl', md: '7xl' }}
+            color='white'
+          >
             Let&#39;s create something extraordinary together.
           </Heading>
           <Box>
             <Heading
               textAlign='left'
               size={{ base: 'xl', md: '2xl' }}
-              mt={2}
+              mt={5}
+              px={4}
               color='white'
               fontWeight='semibold'
             >
