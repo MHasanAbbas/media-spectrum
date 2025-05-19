@@ -5,7 +5,7 @@ import { Text, type TextProps } from '@chakra-ui/react';
 const Copyright = (props: TextProps) => {
   return (
     <Text fontSize='xs' {...props}>
-      &copy; {new Date().getFullYear()} Spectrum Meda Sales, Ltd. All rights
+      &copy; {new Date().getFullYear()} Spectrum Meda Sales Ltd. All rights
       reserved.
     </Text>
   );
@@ -19,7 +19,7 @@ const BAR_COLORS = {
 
 const ColorBars: React.FC = () => {
   return (
-    <Flex w='100%' h='5px' my={2}>
+    <Flex w='100%' h='5px'>
       {Object.values(BAR_COLORS).map((hex, i) => (
         <Box key={i} flex='1' bg={hex} />
       ))}

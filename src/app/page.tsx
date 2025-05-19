@@ -1,5 +1,6 @@
 'use client';
 
+import CallToAction from '@/compoents/cta';
 import Hero from '@/compoents/hero';
 import OurSpectrum from '@/compoents/our-spectrum';
 import WhoWeAre from '@/compoents/who-we-are';
@@ -12,6 +13,7 @@ export default function Home() {
       <Separator mx='40' />
       <OurSpectrum />
       <WhoWeAre />
+      <CallToAction />
     </>
   );
 }

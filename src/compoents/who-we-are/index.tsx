@@ -15,8 +15,9 @@ const WhoWeAre = () => {
     <Container
       bgImage={'/common/imgs/diversity.png'}
       bg='secondary'
-      mb={10}
-      borderRadius={{ base: 'none', md: 'xl' }}
+      // mb={10}
+      fluid
+      // borderRadius={{ base: 'none', md: 'xl' }}
       textAlign='left'
     >
       <SimpleGrid columns={{ base: 1, md: 2 }} pb={10}>

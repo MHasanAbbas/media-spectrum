@@ -11,7 +11,7 @@ export const tokens = defineTokens({
     // background:  { value: '#F7FAFC' },
 
     /* hover / focus-visible variants (≈ +15 % lightness) */
-    primaryHover: { value: '#E75E52' }, // lighter vermilion
+    primaryHover: { value: '#d13428' }, // lighter vermilion
     secondaryHover: { value: '#1A9D4E' }, // lighter green
     accentHover: { value: '#2379D6' }, // lighter blue
   },
