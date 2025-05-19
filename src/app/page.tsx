@@ -2,6 +2,7 @@
 
 import Hero from '@/compoents/hero';
 import OurSpectrum from '@/compoents/our-spectrum';
+import WhoWeAre from '@/compoents/who-we-are';
 import { Separator } from '@chakra-ui/react';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Separator mx='40' />
       <OurSpectrum />
+      <WhoWeAre />
     </>
   );
 }

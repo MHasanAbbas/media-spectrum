@@ -7,7 +7,6 @@ import {
   GridItem,
   Flex,
   Card,
-  Button,
 } from '@chakra-ui/react';
 
 const BAR_COLORS = {
