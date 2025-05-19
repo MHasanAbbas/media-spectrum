@@ -6,6 +6,7 @@ export const tokens = defineTokens({
     primary: { value: '#E34234' }, // Vermilion
     secondary: { value: '#126c36' }, // Deep green
     accent: { value: '#1D63AF' }, // Royal blue
+    default: { value: '#3A393B' }, // Black
     // optional surface
     // background:  { value: '#F7FAFC' },
 

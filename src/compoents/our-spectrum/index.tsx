@@ -10,9 +10,10 @@ import {
 } from '@chakra-ui/react';
 
 const BAR_COLORS = {
-  primary: '#E34234', // Vermilion
-  secondary: '#126c36', // Deep green
   accent: '#1D63AF', // Royal blue
+  secondary: '#126c36', // Deep green
+  primary: '#E34234', // Vermilion
+  default: '#3A393B', // Black
 };
 
 const ColorBars: React.FC = () => {
