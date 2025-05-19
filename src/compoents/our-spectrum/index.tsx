@@ -141,7 +141,7 @@ const OurSpectrum = () => {
       py={8}
     >
       <GridItem colSpan={2} mb={10} textAlign='left'>
-        <Heading size={{ base: '2xl', md: '5xl' }} color={BAR_COLORS.primary}>
+        <Heading size={{ base: '3xl', md: '5xl' }} color={BAR_COLORS.primary}>
           Our Spectrum
           <Box mt={5}>
             <ColorBars />
