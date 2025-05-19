@@ -30,7 +30,7 @@ const OurSpectrum = () => {
   return (
     <Container
       maxW='7xl'
-      bgImage={'/common/imgs/diversity.png'}
+      // bgImage={'/common/imgs/diversity.png'}
       position='relative'
       zIndex={1}
       textAlign='left'

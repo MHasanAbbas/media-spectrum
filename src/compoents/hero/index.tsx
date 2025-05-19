@@ -12,21 +12,47 @@ const features: Feature[] = [
   // { title: 'Performance Analytics', Icon: FiTrendingUp },
 ];
 
+/**
+ * Hero section with full‑bleed video background.
+ *
+ * The video is muted, autoplayed, and looped for a seamless backdrop.
+ * An optional whiteAlpha overlay is added to improve text readability; tweak
+ * or remove this if you want the raw video colours.
+ */
 const Hero: FC = () => (
   <Box
     position='relative'
-    bgGradient='linear(to-r, #1D63AF, #E34234)'
     color='white'
-    py={{ base: 20, md: 32 }}
+    py={{ base: 20, md: '16.3%' }}
     overflow='hidden'
   >
+    {/* Video background */}
+    <Box position='absolute' inset={0} zIndex={0} overflow='hidden'>
+      <video
+        src='/hero-video.mp4' // ⬅️ place your video here
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          pointerEvents: 'none',
+          display: 'block',
+        }}
+      />
+      {/* Optional overlay for better contrast with text */}
+      <Box position='absolute' inset={0} bg='blackAlpha.600' />
+    </Box>
+
+    {/* Content */}
     <Container
       maxW='7xl'
-      bgImage={'/common/imgs/diversity.png'}
       position='relative'
       zIndex={1}
       textAlign='left'
-      color='blackAlpha.800'
+      color='white'
     >
       <Flex align='left' mb={6}>
         <Heading
@@ -36,43 +62,26 @@ const Hero: FC = () => (
           fontWeight='extrabold'
           letterSpacing='tight'
         >
-          Navigating the Future
-          <Text as='span' display='block' mt={7}>
-            of Multicultural Communication
-          </Text>
+          Navigating the Future of Multicultural Communication
+          {/* <Text as='span' display='block' mt={7}></Text> */}
         </Heading>
       </Flex>
-      {/* Subheading */}
+
       <Text
         fontSize={{ base: 'md', md: 'xl' }}
         fontFamily='Open Sans, sans-serif'
         mb={10}
-        color='blackAlpha.800'
+        color='white'
         mx='auto'
       >
         At SMS, we understand that reaching diverse audiences in today&#39;s
         multicultural landscape can be complex and challenging. That&#39;s why
-        we&#39;re here-to simplify the process and provide a breath of fresh air
+        we&#39;re here—to simplify the process and provide a breath of fresh air
         in media sales. With our extensive expertise in media planning and
         buying, we specialise in connecting brands with the diverse communities
         they seek to engage.
       </Text>
 
-      {/* <Stack
-        direction={{ base: 'column', md: 'row' }}
-        gap={6}
-        justify='center'
-        mb={12}
-      >
-        <Button
-          bg='#E34234'
-          _hover={{ bg: '#126c36' }}
-          size='lg'
-          fontFamily='Montserrat, sans-serif'
-        >
-          Get Started
-        </Button>
-      </Stack> */}
       {/* Feature Highlights */}
       <HStack gap={{ base: 8, md: 16 }} justify='center'>
         {features &&
