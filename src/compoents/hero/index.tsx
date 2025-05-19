@@ -12,13 +12,6 @@ const features: Feature[] = [
   // { title: 'Performance Analytics', Icon: FiTrendingUp },
 ];
 
-/**
- * Hero section with full‑bleed video background.
- *
- * The video is muted, autoplayed, and looped for a seamless backdrop.
- * An optional whiteAlpha overlay is added to improve text readability; tweak
- * or remove this if you want the raw video colours.
- */
 const Hero: FC = () => (
   <Box
     position='relative'
