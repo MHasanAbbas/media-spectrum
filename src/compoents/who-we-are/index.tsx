@@ -7,8 +7,10 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
 
 const WhoWeAre = () => {
+  const router = useRouter();
   return (
     <Container
       bgImage={'/common/imgs/diversity.png'}
@@ -48,6 +50,9 @@ const WhoWeAre = () => {
             color='white'
             size='lg'
             _hover={{ bg: 'primaryHover' }}
+            onClick={() => {
+              router.push('/about');
+            }}
           >
             Our Story
           </Button>
