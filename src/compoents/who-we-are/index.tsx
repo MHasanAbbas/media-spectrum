@@ -24,17 +24,17 @@ const WhoWeAre = () => {
             src='/about/who-we-are.png'
             alt='Spectrum Media Sales mug'
             width={{ base: '100%', md: '90%' }}
-            ml='10'
+            ml={{ base: 0, md: 'auto' }}
           />
         </GridItem>
-        <GridItem my='auto'>
+        <GridItem my={{ base: 0, md: 'auto' }}>
           <Heading size={{ base: '3xl', md: '4xl' }} color='white'>
             Who We Are
           </Heading>
           <Text
             fontSize={{ base: 'lg', md: '2xl' }}
             fontWeight='normal'
-            mt={5}
+            mt={{ base: 2, md: 5 }}
             color={'white'}
             textJustify={'middle'}
           >
