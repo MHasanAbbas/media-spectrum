@@ -42,7 +42,7 @@ const CallToAction = () => {
               Contact us
             </Button>
           </GridItem>
-          <GridItem spaceY={5}>
+          {/* <GridItem spaceY={5}>
             <Image
               src='/common/imgs/cta-2.png'
               alt='Spectrum Media Team'
@@ -66,7 +66,8 @@ const CallToAction = () => {
             >
               Join us
             </Button>
-          </GridItem>
+          </GridItem> */}
+          
         </SimpleGrid>
       </Container>
     </Box>
