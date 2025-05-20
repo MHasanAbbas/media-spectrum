@@ -111,7 +111,7 @@ const Services = () => {
     <Container fluid position='relative' zIndex={1} textAlign='left' py={10}>
       <Box borderRadius='xl' px={{ base: 4, md: '7em' }} mb={10}>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-          <GridItem colSpan={2}>
+          <GridItem colSpan={{ base: 1, md: 2 }} mb={10} textAlign='left'>
             <Heading size={{ base: '3xl', md: '5xl' }} color='primary'>
               Services
               <Box mt={5}>
