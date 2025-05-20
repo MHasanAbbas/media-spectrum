@@ -14,15 +14,18 @@ const WhoWeAre = () => {
   return (
     <Container
       bgImage={'/common/imgs/diversity.png'}
-      bg='secondary'
-      // mb={10}
       fluid
-      // borderRadius={{ base: 'none', md: 'xl' }}
+      bgColor='default'
       textAlign='left'
     >
-      <SimpleGrid columns={{ base: 1, md: 2 }} pb={10}>
+      <SimpleGrid maxW='7xl' columns={{ base: 1, md: 2 }} pb={10}>
         <GridItem marginX={{ base: 0, md: 20 }} marginY={10}>
-          <Image src='/about/who-we-are.png' alt='Spectrum Media Sales mug' />
+          <Image
+            src='/about/who-we-are.png'
+            alt='Spectrum Media Sales mug'
+            width={{ base: '100%', md: '90%' }}
+            ml='10'
+          />
         </GridItem>
         <GridItem my='auto'>
           <Heading size={{ base: '3xl', md: '4xl' }} color='white'>
@@ -30,9 +33,9 @@ const WhoWeAre = () => {
           </Heading>
           <Text
             fontSize={{ base: 'lg', md: '2xl' }}
-            color='white'
             fontWeight='normal'
             mt={5}
+            color={'white'}
             textJustify={'middle'}
           >
             For more than a century, we&#39;ve grown into a diverse,

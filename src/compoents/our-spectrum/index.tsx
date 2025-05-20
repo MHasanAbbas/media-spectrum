@@ -133,15 +133,21 @@ const OurSpectrum = () => {
 
   return (
     <Container
-      maxW='7xl'
+      fluid
       position='relative'
       zIndex={1}
       textAlign='left'
-      color='blackAlpha.800'
-      py={8}
+      bg='secondary'
+      color='white'
+      py={10}
     >
-      <GridItem colSpan={2} mb={10} textAlign='left'>
-        <Heading size={{ base: '3xl', md: '5xl' }} color={BAR_COLORS.primary}>
+      <GridItem
+        colSpan={2}
+        mb={10}
+        textAlign='left'
+        px={{ base: 4, md: '7em' }}
+      >
+        <Heading size={{ base: '3xl', md: '5xl' }} color='white'>
           Our Spectrum
           <Box mt={5}>
             <ColorBars />
@@ -160,8 +166,8 @@ const OurSpectrum = () => {
         </Text>
       </GridItem>
 
-      <Box borderRadius='xl'>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+      <Box borderRadius='xl' px={{ base: 4, md: '7em' }} mb={10}>
+        <SimpleGrid columns={{ base: 1, md: 4 }} gap={6}>
           {cards.map((card, index) => (
             <SpectrumCard
               key={index}
