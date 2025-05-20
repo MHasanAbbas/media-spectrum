@@ -35,25 +35,25 @@ const OurSpectrum = () => {
       icon: FaGlobe,
       title: 'Connecting Brands to Communities That Truly Matter',
       description:
-        "At Spectrum Media, we don't just reach audiences — we forge meaningful connections. We specialize in communication across the full spectrum of cultures, rooted in authenticity, nuance, and impact. Our campaigns are thoughtfully designed to reflect the languages, traditions, and values spanning the broad continuum of cultural identities everywhere.",
+        'We build meaningful connections by reflecting the languages, values, and traditions of diverse cultural groups. Our campaigns are rooted in authenticity and crafted to resonate deeply.',
     },
     {
       icon: FaLightbulb,
       title: 'Culturally Savvy Strategy',
       description:
-        'With over 35 years of expertise, we craft media plans that go beyond simple demographics. We dive into language, faith, heritage, and core beliefs — empowering brands to speak to individuals, not just segments. Whether through multi-lingual storytelling or culturally attuned narratives, our strategies are tailored to resonate with depth and integrity across the diverse range of cultural expressions.',
+        'With 35+ years of experience, we go beyond demographics to engage with faith, heritage, and identity. Our strategies are tailored to speak directly to people with cultural nuance and integrity.',
     },
     {
       icon: FaShareAlt,
       title: 'Omnichannel Media Mastery',
       description:
-        'Your audience inhabits many spaces — so do we. From TV, digital, social media, and radio to live events, bloggers, press, and influencers, our expansive multi-platform approach ensures your message lands where your audience is most engaged. Every campaign is customized to maximize reach, relevance, and engagement across the entire spectrum of platforms.',
+        'We co-create with influencers and grassroots media to ensure every campaign feels local and authentic. Transparent dashboards provide real-time performance insights and measurable impact.',
     },
     {
       icon: FaUsers,
       title: 'Community-Centric Collaborations',
       description:
-        'We partner closely with influencers, creatives, and niche community media to deliver authentic campaigns with tangible impact. Our transparent client dashboards offer real-time insights into campaign performance. From strategic alliances to cost-effective content creation, we design campaigns by the community, for the community — always delivering measurable results across the full range of cultural landscapes.',
+        'We co-create with influencers and grassroots media to ensure every campaign feels local and authentic. Transparent dashboards provide real-time performance insights and measurable impact.',
     },
   ];
 
