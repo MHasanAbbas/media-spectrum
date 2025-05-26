@@ -8,7 +8,6 @@ import {
   Flex,
   VStack,
   Image,
-  Highlight,
   Mark,
 } from '@chakra-ui/react';
 
