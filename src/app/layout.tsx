@@ -5,6 +5,7 @@ import { SiteMetaData } from '@/config/meta';
 import ChakraUIProvider from '@/provider/';
 import Navigation from '@/compoents/navigation';
 import Footer from '@/compoents/footer';
+import ScrollToHash from '@/compoents/ui';
 
 export const metadata: Metadata = {
   title: {
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body style={{ backgroundColor: '#fff' }}>
         <ChakraUIProvider>
           <Navigation />
+          <ScrollToHash />
           {children}
           <Footer />
         </ChakraUIProvider>
