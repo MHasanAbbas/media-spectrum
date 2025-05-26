@@ -94,11 +94,7 @@ const ContactUsPage: FC = () => {
     <>
       <Box bg='secondary'>
         <Container maxW='7xl' py={10}>
-          <Heading
-            px={{ base: 4, md: '0' }}
-            size={{ base: '3xl', md: '7xl' }}
-            color='white'
-          >
+          <Heading size={{ base: '3xl', md: '7xl' }} color='white'>
             Let&#39;s create something extraordinary together.
           </Heading>
           <Box>
@@ -123,7 +119,7 @@ const ContactUsPage: FC = () => {
             <Text fontSize='3xl' fontWeight='normal' color='black'>
               General Enquiries
             </Text>
-            <Text fontSize='2xl' fontWeight='normal' color='black' mt={3}>
+            <Text fontSize='xl' fontWeight='normal' color='black' mt={3}>
               Have a general query? We&#39;ll always do our best to help:
               hello@spectrummedia.co.uk
             </Text>

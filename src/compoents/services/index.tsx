@@ -7,8 +7,9 @@ import {
   GridItem,
   Flex,
   VStack,
+  Image,
 } from '@chakra-ui/react';
-import { FaGlobe, FaLightbulb, FaShareAlt, FaUsers } from 'react-icons/fa';
+
 import { useState } from 'react';
 
 const BAR_COLORS = {
@@ -31,25 +32,25 @@ const ColorBars = () => {
 const Services = () => {
   const cards = [
     {
-      icon: FaGlobe,
+      imgSrc: '/services/service-2.png',
       title: 'Media Planning & Buying',
       description:
         'Customised strategies across TV, digital, social media, press, radio, events, bloggers, and influencers to ensure your message reaches the right audience at the right time.',
     },
     {
-      icon: FaLightbulb,
+      imgSrc: '/services/service-1.png',
       title: 'Collaborations with Media Agencies',
       description:
         'We work closely with leading media agencies to plan and execute seamless, high-impact campaigns that align with your brand goals.',
     },
     {
-      icon: FaShareAlt,
+      imgSrc: '/services/service-4.png',
       title: 'Influencer & Event Management',
       description:
         'Connecting your brand with influential figures and organizing memorable events that amplify your message authentically.',
     },
     {
-      icon: FaUsers,
+      imgSrc: '/services/service-3.png',
       title: 'Real-Time Campaign Insights',
       description:
         'Providing clients with transparent dashboards that offer live updates on media plans, bookings, and performance for full control and visibility.',
@@ -57,16 +58,17 @@ const Services = () => {
   ];
 
   interface SpectrumCardProps {
-    icon: React.ElementType;
     title: string;
     description: string;
     index: number;
+    imgSrc?: string; // Optional image source
   }
 
   const SpectrumCard: React.FC<SpectrumCardProps> = ({
     title,
     description,
     index,
+    imgSrc,
   }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -93,10 +95,15 @@ const Services = () => {
         transform={isHovered ? 'scale(1.05)' : 'scale(1)'}
         _hover={{ boxShadow: '2xl' }}
         height='full'
+        display={{ base: '', md: 'flex' }}
+        p={10}
+        spaceX={10}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <VStack gap={4} p={6} height='full' align='flex-start'>
+        <Image src={imgSrc} height={20} />
+
+        <VStack height='full' align='flex-start'>
           <Heading as='h3' size='md' color={cardColor} transition='colors 0.3s'>
             {title}
           </Heading>
@@ -133,7 +140,7 @@ const Services = () => {
           {cards.map((card, index) => (
             <SpectrumCard
               key={index}
-              icon={card.icon}
+              imgSrc={card.imgSrc}
               title={card.title}
               description={card.description}
               index={index}
