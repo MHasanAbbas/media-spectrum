@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
     borderLeft: true,
     borderRight: true,
   },
-  { label: 'About Us', href: '/about', borderTop: true },
+  { label: 'About Us', href: '/about#about-detail', borderTop: true },
   { label: 'Services', href: '/#services' },
   { label: 'News', href: '/news' },
 ];
