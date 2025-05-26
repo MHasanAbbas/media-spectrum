@@ -8,6 +8,8 @@ import {
   Flex,
   VStack,
   Image,
+  Highlight,
+  Mark,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
@@ -126,13 +128,15 @@ const Services = () => {
             </Heading>
 
             <Text
-              fontSize={{ base: 'md', md: 'lg' }}
+              fontSize={{ base: 'lg', md: '3xl' }}
               fontWeight='medium'
               mt={6}
             >
-              At Spectrum Media, we offer a full suite of services to help your
-              brand engage multicultural audiences with precision and
-              authenticity.
+              We offer a full suite of services to help your brand engage{' '}
+              <Mark variant='solid' bgColor='accent'>
+                multicultural audiences
+              </Mark>{' '}
+              with precision and authenticity.
             </Text>
           </GridItem>
 
