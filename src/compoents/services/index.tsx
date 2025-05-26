@@ -100,7 +100,7 @@ const Services = () => {
         display={{ base: 'column', md: 'flex' }}
         p={5}
         spaceX={{ base: 0, md: 6 }}
-        spaceY={{ base: 10, md: 0 }}
+        spaceY={{ base: 5, md: 0 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -139,7 +139,8 @@ const Services = () => {
               with precision and authenticity.
             </Text>
           </GridItem>
-
+        </SimpleGrid>
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
           {cards.map((card, index) => (
             <SpectrumCard
               key={index}
