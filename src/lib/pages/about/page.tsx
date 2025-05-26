@@ -1,3 +1,6 @@
+'use client';
+
+import CallToAction from '@/compoents/cta';
 import {
   Container,
   Text,
@@ -90,6 +93,7 @@ const AboutUsPage: FC = () => {
           </GridItem>
         </SimpleGrid>
       </Container>
+      <CallToAction />
     </>
   );
 };

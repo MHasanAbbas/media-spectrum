@@ -30,14 +30,14 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     label: 'Our Spectrum',
-    href: '/',
+    href: '/#our-spectrum',
     borderTop: true,
     borderBottom: true,
     borderLeft: true,
     borderRight: true,
   },
   { label: 'About Us', href: '/about', borderTop: true },
-  { label: 'Solutions', href: '/approach' },
+  { label: 'Services', href: '/#services' },
   { label: 'News', href: '/news' },
 ];
 
