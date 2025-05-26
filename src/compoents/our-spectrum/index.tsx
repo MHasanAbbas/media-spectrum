@@ -104,7 +104,7 @@ const OurSpectrum = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <VStack gap={4} p={6} height='full' align='flex-start'>
+        <VStack gap={4} p={3} height='full' align='flex-start'>
           <Flex
             w='16'
             h='16'
@@ -158,7 +158,7 @@ const OurSpectrum = () => {
           fontSize={{ base: 'md', md: 'lg' }}
           fontWeight='medium'
           mt={6}
-          maxW='3xl'
+          // maxW='3xl'
         >
           We empower brands to thrive by delivering inclusive, cross-cultural
           media strategies that connect authentically, resonate deeply, and

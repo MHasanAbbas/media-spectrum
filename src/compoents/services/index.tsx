@@ -95,19 +95,18 @@ const Services = () => {
         transform={isHovered ? 'scale(1.05)' : 'scale(1)'}
         _hover={{ boxShadow: '2xl' }}
         height='full'
-        display={{ base: '', md: 'flex' }}
-        p={10}
-        spaceX={10}
+        display={{ base: 'column', md: 'flex' }}
+        p={5}
+        spaceX={{ base: 0, md: 6 }}
+        spaceY={{ base: 10, md: 0 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Image src={imgSrc} height={20} />
-
+        <Image justifySelf='center' src={imgSrc} alt={title} height={20} />
         <VStack height='full' align='flex-start'>
           <Heading as='h3' size='md' color={cardColor} transition='colors 0.3s'>
             {title}
           </Heading>
-
           <Text lineHeight='tall'>{description}</Text>
         </VStack>
       </Box>
@@ -116,7 +115,7 @@ const Services = () => {
 
   return (
     <Container fluid position='relative' zIndex={1} textAlign='left' py={10}>
-      <Box borderRadius='xl' px={{ base: 4, md: '7em' }} mb={10}>
+      <Box borderRadius='xl' px={{ base: 4, md: '7em' }} mb={5}>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
           <GridItem colSpan={{ base: 1, md: 2 }} mb={10} textAlign='left'>
             <Heading size={{ base: '3xl', md: '5xl' }} color='primary'>
