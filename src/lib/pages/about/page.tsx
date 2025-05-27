@@ -1,7 +1,7 @@
 'use client';
 
 import CallToAction from '@/compoents/cta';
-import ScrollToHash from '@/compoents/ui';
+import ScrollToHash from '@/compoents/ui/scroll-to-hash';
 import {
   Container,
   Text,
@@ -41,7 +41,7 @@ const AboutUsPage: FC = () => {
           </Box>
         </Container>
       </Box>
-      <Container maxW='7xl' id='about-detail' py={10}>
+      <Container maxW='7xl' py={10}>
         <SimpleGrid columns={{ base: 1, md: 2 }} px={5} gapX={10}>
           <GridItem colSpan={2} borderRadius='md' my={{ base: 5, md: 10 }}>
             <Heading size={{ base: '3xl', md: '2xl' }} color='primary'>

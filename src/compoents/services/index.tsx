@@ -8,7 +8,6 @@ import {
   Flex,
   VStack,
   Image,
-  Mark,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
@@ -132,10 +131,7 @@ const Services = () => {
               mt={6}
             >
               We offer a full suite of services to help your brand engage{' '}
-              <Mark variant='solid' bgColor='accent'>
-                multicultural audiences
-              </Mark>{' '}
-              with precision and authenticity.
+              multicultural audiences with precision and authenticity.
             </Text>
           </GridItem>
         </SimpleGrid>

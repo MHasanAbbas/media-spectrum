@@ -3,22 +3,25 @@
 import Hero from '@/compoents/hero';
 import OurSpectrum from '@/compoents/our-spectrum';
 import Services from '@/compoents/services';
-import ScrollToHash from '@/compoents/ui';
+import AnimatedSection from '@/compoents/ui/animate-section';
+import ScrollToHash from '@/compoents/ui/scroll-to-hash';
 import WhoWeAre from '@/compoents/who-we-are';
-import { Box } from '@chakra-ui/react';
 
 export default function Home() {
   return (
     <>
       <ScrollToHash />
       <Hero />
-      <Box id='our-spectrum'>
+
+      <AnimatedSection id='our-spectrum'>
         <OurSpectrum />
-      </Box>
-      <Box id='services'>
+      </AnimatedSection>
+      <AnimatedSection id='services'>
         <Services />
-      </Box>
-      <WhoWeAre />
+      </AnimatedSection>
+      <AnimatedSection id='who-we-are'>
+        <WhoWeAre />
+      </AnimatedSection>
     </>
   );
 }
