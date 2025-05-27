@@ -16,7 +16,7 @@ const Hero: FC = () => (
   <Box
     position='relative'
     color='white'
-    py={{ base: 20, md: '16.3%' }}
+    py={{ base: '40%', md: '16.3%' }}
     overflow='hidden'
   >
     {/* Video background */}
