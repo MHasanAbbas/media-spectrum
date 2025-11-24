@@ -130,7 +130,7 @@ const Services = () => {
               fontWeight='medium'
               mt={6}
             >
-              We offer a full  of services to help your brand engage{' '}
+              We offer a full suite of services to help your brand engage{' '}
               multicultural audiences with precision and authenticity.
             </Text>
           </GridItem>
