@@ -54,7 +54,7 @@ const Hero: FC = () => (
           maxW='900px'
         >
           Navigating the Future of <br />
-          Multicultural Communication
+          Multicultu Communication
         </Heading>
       </Flex>
 
