@@ -6,11 +6,7 @@ interface Feature {
   Icon: React.ElementType;
 }
 
-const features: Feature[] = [
-  // { title: 'Media Planning', Icon: FiTarget },
-  // { title: 'Programmatic Buying', Icon: FiBarChart2 },
-  // { title: 'Performance Analytics', Icon: FiTrendingUp },
-];
+const features: Feature[] = [];
 
 const Hero: FC = () => (
   <Box
@@ -22,7 +18,7 @@ const Hero: FC = () => (
     {/* Video background */}
     <Box position='absolute' inset={0} zIndex={0} overflow='hidden'>
       <video
-        src='/hero-video.mp4' // ⬅️ place your video here
+        src='/hero-video.mp4'
         autoPlay
         muted
         loop
@@ -35,7 +31,7 @@ const Hero: FC = () => (
           display: 'block',
         }}
       />
-      {/* Optional overlay for better contrast with text */}
+      {/* Dark overlay to improve text visibility */}
       <Box position='absolute' inset={0} bg='blackAlpha.600' />
     </Box>
 
@@ -50,13 +46,15 @@ const Hero: FC = () => (
       <Flex align='left' mb={6}>
         <Heading
           as='h1'
-          fontSize={{ base: '3xl', md: '5xl' }}
+          fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
           fontFamily='Montserrat, sans-serif'
           fontWeight='extrabold'
           letterSpacing='tight'
+          lineHeight='1.1'
+          maxW='900px'
         >
-          Navigating the Future of Multicultural Communication
-          {/* <Text as='span' display='block' mt={7}></Text> */}
+          Navigating the Future of <br />
+          Multicultural Communication
         </Heading>
       </Flex>
 
@@ -65,7 +63,7 @@ const Hero: FC = () => (
         fontFamily='Open Sans, sans-serif'
         mb={10}
         color='white'
-        mx='auto'
+        maxW='900px'
       >
         At SMS, we understand that reaching diverse audiences in today&#39;s
         multicultural landscape can be complex and challenging. That&#39;s why
