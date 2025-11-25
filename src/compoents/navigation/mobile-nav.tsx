@@ -155,7 +155,15 @@ const NavigationBurger: React.FC = () => {
                     }}
                     onClick={() => handleNavigate(item.href)}
                   >
-                    <Text fontWeight='medium'>{item.label}</Text>
+                    <Text
+  fontWeight='medium'
+  whiteSpace="nowrap"
+  display="block"
+  lineHeight="1.2"
+>
+  {item.label}
+</Text>
+
                   </Box>
                 ))}
               </SimpleGrid>
