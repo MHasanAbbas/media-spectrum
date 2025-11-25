@@ -17,7 +17,7 @@ const AboutUsPage: FC = () => {
   return (
     <>
       <ScrollToHash />
-      <Box bg='secondary'>
+      <Box bg='#1D63AF'>
         <Container maxW='7xl' py={10}>
           <Heading
             px={{ base: 4, md: '0' }}

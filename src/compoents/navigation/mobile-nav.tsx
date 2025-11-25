@@ -1,4 +1,4 @@
-// NavigationBurger.tsx (improved with original imports retained)
+// NavigationBurger.tsx (updated with #1D63AF blue background + premium green Contact Us button)
 import {
   Image,
   Drawer,
@@ -15,7 +15,6 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { MdOutlineClose } from 'react-icons/md';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
-
 import { FaXTwitter } from 'react-icons/fa6';
 
 interface NavItem {
@@ -70,7 +69,8 @@ const NavigationBurger: React.FC = () => {
         <Portal>
           <Drawer.Backdrop />
           <Drawer.Positioner>
-            <Drawer.Content backgroundColor='primary' color='white'>
+            {/* 🔵 Updated background to #1D63AF */}
+            <Drawer.Content backgroundColor='#1D63AF' color='white'>
               <HStack
                 justifyContent='space-between'
                 alignItems='center'
@@ -87,11 +87,13 @@ const NavigationBurger: React.FC = () => {
                   }}
                   onClick={() => router.push('/')}
                 />
+
+                {/* CONTACT BUTTON + CLOSE */}
                 <Box display={'flex'}>
+                  {/* 🔥 Premium green Contact Us button */}
                   <Box
                     mr={{ base: 4, md: '1em' }}
                     cursor='pointer'
-                    color='black'
                   >
                     <Button
                       onClick={() => {
@@ -99,17 +101,18 @@ const NavigationBurger: React.FC = () => {
                         router.push('/contact-us');
                       }}
                       size='sm'
-                      bgColor='secondary'
+                      bgColor='#126C36'
                       _hover={{
-                        bgColor: 'white',
-                        color: 'primary',
+                        bgColor: '#0e512a',
                       }}
                       color='white'
-                      borderRadius={'4xl'}
+                      borderRadius='4xl'
                     >
                       Contact us
                     </Button>
                   </Box>
+
+                  {/* CLOSE ICON */}
                   <Box
                     _hover={{
                       bg: 'white',
@@ -127,6 +130,7 @@ const NavigationBurger: React.FC = () => {
                   </Box>
                 </Box>
               </HStack>
+
               {/* Main navigation grid */}
               <SimpleGrid
                 fontSize={{ base: '3xl', md: '5xl' }}
@@ -143,7 +147,12 @@ const NavigationBurger: React.FC = () => {
                     borderRight={{ base: 'none', md: 'solid' }}
                     borderYWidth='0.5px'
                     paddingY={{ base: 10, md: 20 }}
-                    _hover={{ bgColor: 'primaryHover', cursor: 'pointer' }}
+                    // 🔵 Updated hover to darker premium blue
+                    _hover={{
+                      bgColor: '#164f8a',
+                      transition: '0.2s ease-in-out',
+                      cursor: 'pointer',
+                    }}
                     onClick={() => handleNavigate(item.href)}
                   >
                     <Text fontWeight='medium'>{item.label}</Text>
@@ -166,6 +175,7 @@ const NavigationBurger: React.FC = () => {
                   </Heading>
                   <Text fontSize='lg'>Covent Street, Kensington ABC DEF</Text>
                 </VStack>
+
                 <Box spaceY={5} px={{ base: 0, md: 20 }}>
                   <Heading size='lg'>Follow us</Heading>
                   <HStack gapX={5}>

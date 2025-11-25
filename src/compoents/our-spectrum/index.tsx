@@ -19,15 +19,7 @@ const BAR_COLORS = {
   default: '#3A393B', // Black
 };
 
-const ColorBars = () => {
-  return (
-    <Flex w='20%' h='14px'>
-      {Object.values(BAR_COLORS).map((hex, i) => (
-        <Box key={i} flex='1' bg={hex} />
-      ))}
-    </Flex>
-  );
-};
+
 
 const OurSpectrum = () => {
   const cards = [
@@ -137,8 +129,8 @@ const OurSpectrum = () => {
       position='relative'
       zIndex={1}
       textAlign='left'
-      bg='secondary'
-      color='white'
+      bg='white'
+      color='black'
       py={10}
     >
       <GridItem
@@ -147,12 +139,14 @@ const OurSpectrum = () => {
         textAlign='left'
         px={{ base: 4, md: '7em' }}
       >
-        <Heading size={{ base: '3xl', md: '5xl' }} color='white'>
-          Our Spectrum
-          <Box mt={5}>
-            <ColorBars />
-          </Box>
-        </Heading>
+        <Heading
+  size={{ base: '3xl', md: '5xl' }}
+  color='#E76155'
+  fontWeight='extrabold'
+>
+  Our Spectrum
+</Heading>
+
 
         <Text
           fontSize={{ base: 'md', md: 'lg' }}
