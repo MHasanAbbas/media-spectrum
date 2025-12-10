@@ -1,14 +1,10 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  // turbo removed because it's no longer supported
   experimental: {
-    turbo: {
-      resolveAlias: {
-        'next/link.js': 'next/link',
-        'next/navigation.js': 'next/navigation',
-      },
-    },
+    // you can add other experimental features here if needed
   },
 };
 
