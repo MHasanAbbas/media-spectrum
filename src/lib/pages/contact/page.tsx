@@ -121,7 +121,7 @@ const ContactUsPage: FC = () => {
             </Text>
             <Text fontSize='xl' fontWeight='normal' color='black' mt={3}>
               Have a general query? We&#39;ll always do our best to help:
-              hello@spectrummedia.co.uk
+              javed@spectrummediasales.co.uk
             </Text>
           </GridItem>
           <GridItem borderRadius='md' my={{ base: 5, md: 10 }}>
