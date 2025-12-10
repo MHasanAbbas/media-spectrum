@@ -11,6 +11,9 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
+// ----------------------
+// News Items
+// ----------------------
 const newsItems = [
   {
     title: "The Rise of Multicultural Marketing",
@@ -24,20 +27,24 @@ const newsItems = [
     source: "The Drum",
     link: "https://www.thedrum.com/opinion/2024/02/16/why-inclusive-advertising-is-now-essential",
     summary:
-      "Industry leaders explain why inclusivity is now mandatory for modern advertising strategies—not just a creative preference.",
+      "Industry leaders explain why inclusivity is now mandatory for modern advertising strategies — not simply a creative preference.",
   },
   {
     title: "UK Advertising Still Falling Short on Diversity",
     source: "Campaign UK",
     link: "https://www.campaignlive.co.uk/article/uk-advertising-still-falling-short-diversity-representation/1813257",
     summary:
-      "New insights reveal that UK advertising remains behind on ethnic and cultural representation.",
+      "New insights reveal that UK advertising remains behind on ethnic and cultural representation, highlighting the need for multicultural investment.",
   },
 ];
 
+// ----------------------
+// News Page Component
+// ----------------------
 export default function NewsPage() {
   return (
     <Box px={{ base: 5, md: 40 }} py={{ base: 10, md: 20 }}>
+      {/* Page Heading */}
       <Heading
         size="2xl"
         mb={10}
@@ -48,6 +55,7 @@ export default function NewsPage() {
         News & Insights
       </Heading>
 
+      {/* News Cards Grid */}
       <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
         {newsItems.map((item, index) => (
           <Box
@@ -63,23 +71,27 @@ export default function NewsPage() {
             }}
           >
             <VStack align="start" gap={4}>
-
+              {/* Title */}
               <Heading size="lg" color="#1D63AF">
                 {item.title}
               </Heading>
 
+              {/* Source */}
               <Text fontSize="sm" color="gray.500">
                 Source: {item.source}
               </Text>
 
+              {/* Summary */}
               <Text fontSize="md" color="gray.700">
                 {item.summary}
               </Text>
 
+              {/* External Link */}
               <HStack pt={4}>
                 <Link
                   href={item.link}
-                  isExternal
+                  target="_blank"
+                  rel="noopener noreferrer"
                   color="#126C36"
                   fontWeight="semibold"
                   _hover={{ color: "#0e512a" }}
