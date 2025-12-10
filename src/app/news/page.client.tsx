@@ -8,7 +8,6 @@ import {
   Link,
   VStack,
   HStack,
-  Divider,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -77,7 +76,8 @@ export default function NewsPage() {
               {newsItem.summary}
             </Text>
 
-            <Divider my={4} />
+            {/* Divider (Custom) */}
+            <Box height="1px" bg="#e5e5e5" my={4} />
 
             {/* Read More */}
             <HStack pt={2}>
