@@ -8,46 +8,28 @@ import {
   Link,
   VStack,
   HStack,
+  Divider,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 // ----------------------
-// News Items
+// Single News Item
 // ----------------------
-const newsItems = [
-  {
-    title: "The Rise of Multicultural Marketing",
-    source: "WARC",
-    link: "https://www.warc.com/newsandopinion/opinion/the-rise-of-multicultural-marketing/6349",
-    summary:
-      "An in-depth look at how major brands are increasing investment in multicultural media to reach diverse audiences effectively.",
-  },
-  {
-    title: "Why Inclusive Advertising Is Now Essential",
-    source: "The Drum",
-    link: "https://www.thedrum.com/opinion/2024/02/16/why-inclusive-advertising-is-now-essential",
-    summary:
-      "Industry leaders explain why inclusivity is now mandatory for modern advertising strategies — not simply a creative preference.",
-  },
-  {
-    title: "UK Advertising Still Falling Short on Diversity",
-    source: "Campaign UK",
-    link: "https://www.campaignlive.co.uk/article/uk-advertising-still-falling-short-diversity-representation/1813257",
-    summary:
-      "New insights reveal that UK advertising remains behind on ethnic and cultural representation, highlighting the need for multicultural investment.",
-  },
-];
+const newsItem = {
+  title: "The Rise of Multicultural Marketing",
+  source: "WARC",
+  link: "https://www.warc.com/newsandopinion/opinion/the-rise-of-multicultural-marketing/6349",
+  summary:
+    "An in-depth look at how major brands are increasing investment in multicultural media to reach diverse audiences more meaningfully.",
+};
 
-// ----------------------
-// News Page Component
-// ----------------------
 export default function NewsPage() {
   return (
     <Box px={{ base: 5, md: 40 }} py={{ base: 10, md: 20 }}>
-      {/* Page Heading */}
+      {/* Page Title */}
       <Heading
         size="2xl"
-        mb={10}
+        mb={6}
         color="#1D63AF"
         fontWeight="bold"
         textAlign={{ base: "center", md: "left" }}
@@ -55,53 +37,67 @@ export default function NewsPage() {
         News & Insights
       </Heading>
 
-      {/* News Cards Grid */}
-      <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
-        {newsItems.map((item, index) => (
-          <Box
-            key={index}
-            p={6}
-            border="1px solid #d9d9d9"
-            borderRadius="lg"
-            bg="white"
-            _hover={{
-              transform: "translateY(-6px)",
-              transition: ".25s ease",
-              shadow: "lg",
-            }}
-          >
-            <VStack align="start" gap={4}>
-              {/* Title */}
-              <Heading size="lg" color="#1D63AF">
-                {item.title}
-              </Heading>
+      <Text
+        fontSize="lg"
+        color="gray.600"
+        maxW="3xl"
+        mb={12}
+        textAlign={{ base: "center", md: "left" }}
+      >
+        Explore important developments and insights in multicultural and
+        inclusive media trends around the world.
+      </Text>
 
-              {/* Source */}
-              <Text fontSize="sm" color="gray.500">
-                Source: {item.source}
-              </Text>
+      {/* News Card */}
+      <SimpleGrid columns={{ base: 1, md: 1 }} gap={10}>
+        <Box
+          p={8}
+          border="1px solid #e5e5e5"
+          borderRadius="lg"
+          bg="white"
+          _hover={{
+            transform: "translateY(-4px)",
+            transition: ".25s ease",
+            shadow: "md",
+          }}
+        >
+          <VStack align="start" gap={4}>
+            {/* Title */}
+            <Heading size="lg" color="#1D63AF">
+              {newsItem.title}
+            </Heading>
 
-              {/* Summary */}
-              <Text fontSize="md" color="gray.700">
-                {item.summary}
-              </Text>
+            {/* Source */}
+            <Text fontSize="sm" color="gray.500">
+              Source: {newsItem.source}
+            </Text>
 
-              {/* External Link */}
-              <HStack pt={4}>
-                <Link
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="#126C36"
-                  fontWeight="semibold"
-                  _hover={{ color: "#0e512a" }}
-                >
-                  Read full article <ExternalLinkIcon ml={1} />
-                </Link>
-              </HStack>
-            </VStack>
-          </Box>
-        ))}
+            {/* Summary */}
+            <Text fontSize="md" color="gray.700" lineHeight="1.7">
+              {newsItem.summary}
+            </Text>
+
+            <Divider my={4} />
+
+            {/* Read More */}
+            <HStack pt={2}>
+              <Link
+                href={newsItem.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="#126C36"
+                fontWeight="semibold"
+                fontSize="md"
+                _hover={{ color: "#0e512a" }}
+                display="flex"
+                alignItems="center"
+                gap={2}
+              >
+                Read full article <ExternalLinkIcon />
+              </Link>
+            </HStack>
+          </VStack>
+        </Box>
       </SimpleGrid>
     </Box>
   );
