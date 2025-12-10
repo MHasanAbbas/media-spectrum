@@ -181,7 +181,7 @@ const NavigationBurger: React.FC = () => {
                   <Heading size='lg' fontWeight='medium'>
                     London
                   </Heading>
-                  <Text fontSize='lg'>Covent Street, Kensington ABC DEF</Text>
+                  <Text fontSize='lg'>Croxley business park , building 2, Watford WD19 9 AY</Text>
                 </VStack>
 
                 <Box spaceY={5} px={{ base: 0, md: 20 }}>
