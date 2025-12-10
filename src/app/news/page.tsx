@@ -11,37 +11,36 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-interface NewsItem {
-  title: string;
-  summary: string;
-  link: string;
-  source: string;
-}
-
-const newsItems: NewsItem[] = [
+// ----------------------
+// News Items
+// ----------------------
+const newsItems = [
   {
     title: "The Rise of Multicultural Marketing",
     source: "WARC",
     link: "https://www.warc.com/newsandopinion/opinion/the-rise-of-multicultural-marketing/6349",
     summary:
-      "An in-depth look at how global brands are increasing investment in multicultural media to reach diverse communities more meaningfully.",
+      "An in-depth look at how major brands are increasing investment in multicultural media to reach diverse audiences more meaningfully.",
   },
   {
     title: "Why Inclusive Advertising Is Now Essential",
     source: "The Drum",
     link: "https://www.thedrum.com/opinion/2024/02/16/why-inclusive-advertising-is-now-essential",
     summary:
-      "Industry leaders explain why representation and inclusion are now required for modern advertising strategies—not optional add-ons.",
+      "Industry leaders explain why inclusivity is now mandatory for modern advertising strategies—not just a creative preference.",
   },
   {
     title: "UK Advertising Still Falling Short on Diversity",
     source: "Campaign UK",
     link: "https://www.campaignlive.co.uk/article/uk-advertising-still-falling-short-diversity-representation/1813257",
     summary:
-      "New data shows the UK advertising industry still lacks true representation, highlighting the need for better multicultural media investment.",
+      "New insights reveal that UK advertising remains behind on ethnic and cultural representation, highlighting the need for greater multicultural investment.",
   },
 ];
 
+// ----------------------
+// News Page Component
+// ----------------------
 export default function NewsPage() {
   return (
     <Box px={{ base: 5, md: 40 }} py={{ base: 10, md: 20 }}>
@@ -56,7 +55,7 @@ export default function NewsPage() {
         News & Insights
       </Heading>
 
-      {/* News Grid */}
+      {/* News Cards Grid */}
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         {newsItems.map((item, index) => (
           <Box
@@ -87,7 +86,7 @@ export default function NewsPage() {
                 {item.summary}
               </Text>
 
-              {/* Link */}
+              {/* External Link */}
               <HStack pt={4}>
                 <Link
                   href={item.link}
