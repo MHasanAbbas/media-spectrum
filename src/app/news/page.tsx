@@ -62,7 +62,8 @@ export default function NewsPage() {
               shadow: "lg",
             }}
           >
-            <VStack align="start" spacing={4}>
+            <VStack align="start" gap={4}>
+
               <Heading size="lg" color="#1D63AF">
                 {item.title}
               </Heading>
