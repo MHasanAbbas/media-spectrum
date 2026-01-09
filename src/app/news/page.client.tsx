@@ -63,8 +63,8 @@ export default function NewsPage() {
           borderRadius="2xl"
           px={{ base: 6, md: 12 }}
           py={{ base: 10, md: 14 }}
-          boxShadow="2xl"
-          mb={12}
+          boxShadow="xl"
+          mb={{ base: 10, md: 12 }}
           position="relative"
           overflow="hidden"
         >
@@ -89,7 +89,23 @@ export default function NewsPage() {
           </VStack>
         </Box>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 8, md: 10 }}>
+        <VStack
+          align="start"
+          gap={2}
+          mb={{ base: 6, md: 8 }}
+          px={{ base: 1, md: 2 }}
+        >
+          <BrandStripes />
+          <Heading size={{ base: "xl", md: "2xl" }} color="#1D63AF">
+            Latest Headlines
+          </Heading>
+        </VStack>
+
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          gap={{ base: 8, md: 8 }}
+          justifyItems="center"
+        >
           {newsItems.map((item) => (
             <Box
               key={item.title}
@@ -97,18 +113,20 @@ export default function NewsPage() {
               borderRadius="2xl"
               overflow="hidden"
               bg="white"
-              boxShadow="xl"
+              boxShadow="lg"
               border="1px solid"
               borderColor="gray.100"
               transition="all 0.25s ease"
-              _hover={{ transform: "translateY(-8px)", boxShadow: "2xl" }}
+              maxW="520px"
+              w="100%"
+              _hover={{ transform: "translateY(-6px)", boxShadow: "xl" }}
             >
               <Box position="relative" overflow="hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   w="100%"
-                  h={{ base: "220px", md: "240px" }}
+                  h={{ base: "190px", md: "210px" }}
                   objectFit="cover"
                   transition="transform 0.3s ease"
                   _groupHover={{ transform: "scale(1.05)" }}
@@ -142,7 +160,7 @@ export default function NewsPage() {
                 />
               </Box>
 
-              <VStack align="start" gap={5} p={{ base: 6, md: 7 }}>
+              <VStack align="start" gap={4} p={{ base: 6, md: 6 }}>
                 <HStack gap={3} color="gray.600" fontWeight="semibold">
                   <Box
                     w="10px"
@@ -166,7 +184,7 @@ export default function NewsPage() {
                   {item.title}
                 </Heading>
 
-                <Text fontSize="md" color="gray.700" lineHeight="1.7">
+                <Text fontSize="md" color="gray.700" lineHeight="1.6">
                   {item.summary}
                 </Text>
 
