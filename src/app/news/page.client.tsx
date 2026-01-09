@@ -97,12 +97,12 @@ export default function NewsPage() {
               borderColor: "#1D63AF",
             }}
           >
-            <VStack align="start" spacing={4}>
+            <VStack align="start" gap={4}>
               <Heading size="lg" color="#1D63AF">
                 {item.title}
               </Heading>
 
-              <HStack spacing={3} color="gray.500" fontWeight="semibold">
+              <HStack gap={3} color="gray.500" fontWeight="semibold">
                 <Text>{item.source}</Text>
                 {item.date && (
                   <>
