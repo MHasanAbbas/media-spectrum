@@ -103,9 +103,9 @@ export default function NewsPage() {
         </VStack>
 
         <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          gap={{ base: 8, md: 8 }}
-          justifyItems="center"
+          columns={{ base: 1, md: 2, lg: 3 }}
+          gap={{ base: 8, md: 8, lg: 10 }}
+          justifyItems="stretch"
         >
           {newsItems.map((item) => (
             <ChakraLink
@@ -114,8 +114,12 @@ export default function NewsPage() {
               target="_blank"
               rel="noopener noreferrer"
               w="100%"
-              maxW="520px"
+              maxW="440px"
               _hover={{ textDecoration: "none" }}
+              _focusVisible={{
+                boxShadow: "0 0 0 3px rgba(29,99,175,0.4)",
+                borderRadius: "2xl",
+              }}
             >
               <Box
                 role="group"
@@ -135,7 +139,7 @@ export default function NewsPage() {
                     src={item.image}
                     alt={item.title}
                     w="100%"
-                    h={{ base: "180px", md: "200px" }}
+                    h={{ base: "180px", md: "200px", lg: "220px" }}
                     objectFit="cover"
                     transition="transform 0.3s ease"
                     _groupHover={{ transform: "scale(1.05)" }}
@@ -193,11 +197,11 @@ export default function NewsPage() {
                     )}
                   </HStack>
 
-                  <Heading size="lg" color="#1D63AF" lineHeight="1.25">
+                  <Heading size="md" color="#1D63AF" lineHeight="1.3">
                     {item.title}
                   </Heading>
 
-                  <Text fontSize="md" color="gray.700" lineHeight="1.6">
+                  <Text fontSize="sm" color="gray.700" lineHeight="1.6">
                     {item.summary}
                   </Text>
 
@@ -208,7 +212,7 @@ export default function NewsPage() {
                     align="center"
                     color="#126C36"
                     fontWeight="semibold"
-                    fontSize="md"
+                    fontSize="sm"
                     gap={2}
                   >
                     <Text>Read full article</Text>
