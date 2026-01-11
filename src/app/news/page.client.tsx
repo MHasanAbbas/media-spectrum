@@ -1,18 +1,18 @@
 "use client";
 
 import {
+  Badge,
   Box,
   Container,
+  Flex,
   Heading,
-  Text,
-  SimpleGrid,
-  Link,
-  VStack,
   HStack,
   Image,
-  Flex,
-  Badge,
-  Link as ChakraLink,
+  LinkBox,
+  LinkOverlay,
+  SimpleGrid,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -55,9 +55,9 @@ export default function NewsPage() {
     <Box
       bgGradient="linear(to-b, #f8fbff, white)"
       minH="100vh"
-      py={{ base: 10, md: 16 }}
+      py={{ base: 12, md: 16 }}
     >
-      <Container maxW="7xl">
+      <Container maxW="7xl" px={{ base: 4, md: 6 }}>
         <Box
           bgGradient="linear(to-r, rgba(29,99,175,0.92), rgba(18,108,54,0.92))"
           color="white"
@@ -104,123 +104,139 @@ export default function NewsPage() {
 
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 3 }}
-          gap={{ base: 8, md: 8, lg: 10 }}
-          justifyItems="stretch"
+          gap={{ base: 8, md: 10 }}
+          alignItems="stretch"
         >
           {newsItems.map((item) => (
-            <ChakraLink
+            <LinkBox
+              as="article"
               key={item.title}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              w="100%"
-              maxW="440px"
-              _hover={{ textDecoration: "none" }}
-              _focusVisible={{
+              role="group"
+              h="100%"
+              borderRadius="2xl"
+              overflow="hidden"
+              bg="white"
+              boxShadow="lg"
+              border="1px solid"
+              borderColor="gray.100"
+              borderTopWidth="6px"
+              borderTopColor={item.accent}
+              display="flex"
+              flexDirection="column"
+              transition="all 0.25s ease"
+              _hover={{ transform: "translateY(-6px)", boxShadow: "xl" }}
+              _focusWithin={{
                 boxShadow: "0 0 0 3px rgba(29,99,175,0.4)",
-                borderRadius: "2xl",
+                transform: "translateY(-4px)",
               }}
             >
-              <Box
-                role="group"
-                borderRadius="2xl"
-                overflow="hidden"
-                bg="white"
-                boxShadow="lg"
-                border="1px solid"
-                borderColor="gray.100"
-                borderTopWidth="5px"
-                borderTopColor={item.accent}
-                transition="all 0.25s ease"
-                _hover={{ transform: "translateY(-6px)", boxShadow: "xl" }}
-              >
-                <Box position="relative" overflow="hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    w="100%"
-                    h={{ base: "180px", md: "200px", lg: "220px" }}
-                    objectFit="cover"
-                    transition="transform 0.3s ease"
-                    _groupHover={{ transform: "scale(1.05)" }}
-                  />
-                  <Box
-                    position="absolute"
-                    top={4}
-                    left={4}
-                    display="inline-flex"
-                    gap={2}
-                    alignItems="center"
+              <Box position="relative" overflow="hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  w="100%"
+                  h={{ base: "200px", md: "210px", lg: "220px" }}
+                  objectFit="cover"
+                  transition="transform 0.3s ease"
+                  _groupHover={{ transform: "scale(1.05)" }}
+                />
+                <Box
+                  position="absolute"
+                  top={4}
+                  left={4}
+                  display="inline-flex"
+                  gap={2}
+                  alignItems="center"
+                >
+                  <Badge
+                    bg="blackAlpha.700"
+                    color="white"
+                    fontSize="xs"
+                    borderRadius="full"
+                    px={3}
+                    py={1}
+                    textTransform="none"
                   >
-                    <Badge
-                      bg="blackAlpha.700"
-                      color="white"
-                      fontSize="xs"
-                      borderRadius="full"
-                      px={3}
-                      py={1}
-                      textTransform="none"
-                    >
-                      {item.category}
-                    </Badge>
-                  </Box>
-                  <Box
-                    position="absolute"
-                    insetX={0}
-                    bottom={0}
-                    h="24"
-                    bgGradient="linear(to-t, rgba(0,0,0,0.4), transparent)"
-                  />
+                    {item.category}
+                  </Badge>
                 </Box>
-
-                <VStack align="start" gap={4} p={{ base: 5, md: 5 }}>
-                  <HStack gap={3} color="gray.600" fontWeight="semibold">
-                    <Box
-                      w="10px"
-                      h="10px"
-                      bg={item.accent}
-                      borderRadius="full"
-                      as="span"
-                    />
-                    <Text>{item.source}</Text>
-                    {item.date && (
-                      <>
-                        <Box w="1px" h="16px" bg="gray.200" />
-                        <Text
-                          fontSize="sm"
-                          fontWeight="medium"
-                          color="gray.500"
-                        >
-                          {item.date}
-                        </Text>
-                      </>
-                    )}
-                  </HStack>
-
-                  <Heading size="md" color="#1D63AF" lineHeight="1.3">
-                    {item.title}
-                  </Heading>
-
-                  <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                    {item.summary}
-                  </Text>
-
-                  <Flex
-                    pt={1}
-                    w="full"
-                    justify="space-between"
-                    align="center"
-                    color="#126C36"
-                    fontWeight="semibold"
-                    fontSize="sm"
-                    gap={2}
-                  >
-                    <Text>Read full article</Text>
-                    <ExternalLinkIcon />
-                  </Flex>
-                </VStack>
+                <Box
+                  position="absolute"
+                  insetX={0}
+                  bottom={0}
+                  h="24"
+                  bgGradient="linear(to-t, rgba(0,0,0,0.4), transparent)"
+                />
               </Box>
-            </ChakraLink>
+
+              <VStack
+                align="start"
+                gap={4}
+                p={{ base: 5, md: 6 }}
+                flex="1"
+              >
+                <HStack gap={3} color="gray.600" fontWeight="semibold">
+                  <Box
+                    w="10px"
+                    h="10px"
+                    bg={item.accent}
+                    borderRadius="full"
+                    as="span"
+                  />
+                  <Text fontSize="sm" color="gray.700">
+                    {item.source}
+                  </Text>
+                  {item.date && (
+                    <>
+                      <Box w="1px" h="16px" bg="gray.200" />
+                      <Text fontSize="sm" fontWeight="medium" color="gray.500">
+                        {item.date}
+                      </Text>
+                    </>
+                  )}
+                </HStack>
+
+                <Heading
+                  size="md"
+                  color="#1D63AF"
+                  lineHeight="1.3"
+                  noOfLines={2}
+                >
+                  <LinkOverlay
+                    href={item.link}
+                    isExternal
+                    aria-label={`Read full article: ${item.title}`}
+                    rel="noreferrer noopener"
+                  >
+                    {item.title}
+                  </LinkOverlay>
+                </Heading>
+
+                <Text
+                  fontSize="sm"
+                  color="gray.700"
+                  lineHeight="1.6"
+                  noOfLines={{ base: 3, md: 4 }}
+                >
+                  {item.summary}
+                </Text>
+
+                <Flex
+                  pt={2}
+                  w="full"
+                  justify="space-between"
+                  align="center"
+                  color="#126C36"
+                  fontWeight="semibold"
+                  fontSize="sm"
+                  gap={2}
+                  mt="auto"
+                >
+                  <Text>Read full article {"\u2192"}</Text>
+                  <ExternalLinkIcon />
+                </Flex>
+              </VStack>
+            </LinkBox>
           ))}
         </SimpleGrid>
       </Container>
