@@ -200,13 +200,18 @@ export default function NewsPage() {
                   size="md"
                   color="#1D63AF"
                   lineHeight="1.3"
-                  noOfLines={2}
+                  style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 2,
+                    overflow: "hidden",
+                  }}
                 >
                   <LinkOverlay
                     href={item.link}
-                    isExternal
                     aria-label={`Read full article: ${item.title}`}
                     rel="noreferrer noopener"
+                    target="_blank"
                   >
                     {item.title}
                   </LinkOverlay>
@@ -216,7 +221,12 @@ export default function NewsPage() {
                   fontSize="sm"
                   color="gray.700"
                   lineHeight="1.6"
-                  noOfLines={{ base: 3, md: 4 }}
+                  style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 4,
+                    overflow: "hidden",
+                  }}
                 >
                   {item.summary}
                 </Text>
