@@ -242,7 +242,7 @@ export default function NewsPage() {
                   gap={2}
                   mt="auto"
                 >
-                  <Text>Read full article {"\u2192"}</Text>
+                  <Text>Read full article</Text>
                   <ExternalLinkIcon />
                 </Flex>
               </VStack>
