@@ -4,7 +4,6 @@ import {
   Badge,
   Box,
   Container,
-  Divider,
   Flex,
   Heading,
   HStack,
@@ -153,13 +152,13 @@ export default function NewsPage() {
 
             <Stack
               direction={{ base: "column", md: "row" }}
-              spacing={{ base: 3, md: 4 }}
+              gap={{ base: 3, md: 4 }}
               w="full"
             >
               {signalPills.map((pill) => (
                 <HStack
                   key={pill.label}
-                  spacing={3}
+                  gap={3}
                   bg="whiteAlpha.100"
                   border="1px solid"
                   borderColor="whiteAlpha.200"
@@ -194,13 +193,12 @@ export default function NewsPage() {
           mb={{ base: 10, md: 12 }}
         >
           <HStack
-            spacing={6}
+            gap={6}
             overflowX="auto"
             pb={1}
-            sx={{ "::-webkit-scrollbar": { display: "none" } }}
           >
             {newsItems.map((item) => (
-              <HStack key={`${item.title}-ticker`} spacing={3} minW="260px">
+              <HStack key={`${item.title}-ticker`} gap={3} minW="260px">
                 <Box w="10px" h="10px" bg={item.accent} borderRadius="full" />
                 <Badge
                   bg="gray.50"
@@ -213,7 +211,13 @@ export default function NewsPage() {
                 >
                   {item.category}
                 </Badge>
-                <Text fontSize="sm" color="gray.700" noOfLines={1}>
+                <Text
+                  fontSize="sm"
+                  color="gray.700"
+                  whiteSpace="nowrap"
+                  textOverflow="ellipsis"
+                  overflow="hidden"
+                >
                   {item.title}
                 </Text>
               </HStack>
@@ -238,11 +242,11 @@ export default function NewsPage() {
             <Flex direction={{ base: "column", md: "row" }}>
               <VStack
                 align="start"
-                spacing={5}
+                gap={5}
                 p={{ base: 6, md: 8 }}
                 flex="1"
               >
-                <HStack spacing={3}>
+                <HStack gap={3}>
                   <Badge
                     bg={featuredStory.accent}
                     color="white"
@@ -280,7 +284,7 @@ export default function NewsPage() {
                   {featuredStory.summary}
                 </Text>
 
-                <HStack spacing={4} color="gray.600" fontWeight="semibold">
+                <HStack gap={4} color="gray.600" fontWeight="semibold">
                   <Text>{featuredStory.source}</Text>
                   {featuredStory.date && <Box w="1px" h="18px" bg="gray.200" />}
                   <Text fontWeight="medium" color="gray.500">
@@ -350,7 +354,7 @@ export default function NewsPage() {
           </Text>
         </VStack>
 
-        <Wrap spacing={3} mb={{ base: 6, md: 8 }}>
+        <Wrap gap={3} mb={{ base: 6, md: 8 }}>
           {[
             "CTV + Streaming",
             "Audio",
@@ -489,7 +493,7 @@ export default function NewsPage() {
                   {item.summary}
                 </Text>
 
-                <Divider borderColor="gray.100" />
+                <Box borderTop="1px solid" borderColor="gray.100" w="full" />
 
                 <Flex
                   pt={1}
